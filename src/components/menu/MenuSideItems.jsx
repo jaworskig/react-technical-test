@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import style from "styled-components";
-import config from "./config";
+import { menuSettings } from "./config";
 
 const MenuSideItemsStyle = style.div`
   grid-area: MenuSideItems;
   display: block;
-  @media (max-width: ${config.mobileWidth}px) {
+  @media (max-width: ${menuSettings.mobileWidth}px) {
     display: none;
   }
 `;
@@ -14,7 +14,7 @@ class MenuSideItems extends Component {
   render() {
     return (
       <MenuSideItemsStyle>
-        <div> 
+        <div>
           <ul>
             <li>Home</li>
             <li>Flights</li>

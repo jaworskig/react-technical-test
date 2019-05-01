@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import style from "styled-components";
-import config from "./config";
+import {menuSettings, footerData } from "./config";
 import MenuHeader from "./MenuHeader";
 import MenuFooter from "./MenuFooter";
 import MenuUserInfo from "./MenuUserInfo";
@@ -10,8 +10,8 @@ import MenuSideItems from "./MenuSideItems";
 const Style = style.div`
   display: grid;
 
-  background-color: ${config.backgroundColor};
-  color: ${config.color};
+  background-color: ${menuSettings.backgroundColor};
+  color: ${menuSettings.color};
   grid-template-columns: 300px auto;
   grid-template-areas:
   'MenuHeader MenuHeader'
@@ -19,7 +19,7 @@ const Style = style.div`
   'MenuSideItems MenuMainItems'
   'MenuFooter MenuFooter';
 
-  @media (max-width: ${config.mobileWidth}px) {
+  @media (max-width: ${menuSettings.mobileWidth}px) {
     grid-template-columns: auto;
     grid-template-areas:
     'MenuHeader '
@@ -38,7 +38,7 @@ class Menu extends Component {
         <MenuSideItems />
         <MenuUserInfo />
         <MenuMaintems />
-        <MenuFooter />
+        <MenuFooter data={footerData} />
       </Style>
     );
   }
