@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import style from "styled-components";
-import {menuSettings, footerData } from "./config";
+import { menuSettings, footerData, mainMenuData } from "./config";
 import MenuHeader from "./MenuHeader";
 import MenuFooter from "./MenuFooter";
 import MenuUserInfo from "./MenuUserInfo";
@@ -12,7 +12,7 @@ const Style = style.div`
 
   background-color: ${menuSettings.backgroundColor};
   color: ${menuSettings.color};
-  grid-template-columns: 300px auto;
+  grid-template-columns: 200px auto;
   grid-template-areas:
   'MenuHeader MenuHeader'
   'MenuSideItems MenuUserInfo'
@@ -37,7 +37,7 @@ class Menu extends Component {
         <MenuHeader />
         <MenuSideItems />
         <MenuUserInfo />
-        <MenuMaintems />
+        <MenuMaintems data={mainMenuData} />
         <MenuFooter data={footerData} />
       </Style>
     );

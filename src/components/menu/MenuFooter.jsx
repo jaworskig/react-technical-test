@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "styled-components";
 import {menuSettings} from "./config";
 
@@ -37,27 +37,6 @@ const MenuFooter = (props) => {
       </MenuFooterDetailsStyle>
     </MenuFooterStyle>
   );
-
-
 }
-
-// class MenuFooter extends Component {
-//   render() {
-  
-
-//     return (
-//       <MenuFooterStyle>
-//         <MenuFooterTextStyle>
-//           <div>{this.props.data.contact}</div>
-//         </MenuFooterTextStyle>
-//         <MenuFooterDetailsStyle>
-//           <Link linkType="callto" linkData={this.props.data.phone} />
-//           <br />
-//           <Link linkType="mailto" linkData={this.props.data.email} />
-//         </MenuFooterDetailsStyle>
-//       </MenuFooterStyle>
-//     );
-//   }
-// }
 
 export default MenuFooter;
