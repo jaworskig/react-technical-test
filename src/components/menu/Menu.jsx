@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import style from "styled-components";
-import { menuSettings, footerData, mainMenuData } from "./config";
+import { menuSettings, footerData, mainMenuData, userInfoData } from "./config";
 import MenuHeader from "./MenuHeader";
 import MenuFooter from "./MenuFooter";
 import MenuUserInfo from "./MenuUserInfo";
@@ -36,7 +36,7 @@ class Menu extends Component {
       <Style>
         <MenuHeader />
         <MenuSideItems />
-        <MenuUserInfo />
+        <MenuUserInfo data={userInfoData} />
         <MenuMaintems data={mainMenuData} />
         <MenuFooter data={footerData} />
       </Style>

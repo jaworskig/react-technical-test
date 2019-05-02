@@ -1,3 +1,5 @@
+import avatar_img from "../../resources/img/avatar.png";
+
 export const disType = {
   MOBILE: 1,
   PC: 2,
@@ -7,7 +9,17 @@ export const disType = {
 export const menuSettings = {
   mobileWidth: 600,
   backgroundColor: "#ee5f63",
-  color: "#ffffff"
+  color: "#fff",
+  borderColor: "#fff"
+};
+
+export const userInfoData = {
+    firstName: "Dominik",
+    lastName: "Biel",
+    fullDesc: "Available Balance",
+    shortDesc: "Available",
+    balance: 1500,
+    image: avatar_img
 };
 
 export const footerData = {

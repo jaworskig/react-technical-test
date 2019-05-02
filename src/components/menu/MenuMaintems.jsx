@@ -28,15 +28,13 @@ const LIStyle = style(LI)`
 const MenuMainItems = props => {
   return (
     <MenuMainItemsStyle>
-      
-        <ul>
-          {props.data.map((x, index) => (
-            <LIStyle key={index} data={x} />
-          ))}
-        </ul>
-       
+      <ul>
+        {props.data.map((x, index) => (
+          <LIStyle key={index} data={x} />
+        ))}
+      </ul>
     </MenuMainItemsStyle>
-  )
+  );
 };
 
 export default MenuMainItems;
