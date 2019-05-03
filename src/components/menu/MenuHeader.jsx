@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "styled-components";
 import logo from "../../resources/img/awaymoFullWhite.svg"
 
- 
 
 const MenuHeaderStyle = style.div`
   grid-area: MenuHeader;
   display: flex; 
+  
   img {
     display: flex;
     flex: 1;

@@ -39,3 +39,13 @@ export const mainMenuData = [
   { text: "FAQ", link: "#0", icon: "fas fa-user-circle",display: disType.MOBILE },
   { text: "Resume Application", link: "#0", icon: "fas fa-user-circle",display: disType.PC }
 ];
+
+export const sideMenuData = [
+    { text: "Home", link: "#0"  },
+    { text: "Flights", link: "#0"  },
+    { text: "About Us", link: "#0"  },
+    { text: "FAQ", link: "#0"  },
+    { text: "Support", link: "#0"  },
+    { text: "Profile", link: "#0"  },
+    { text: "Contact Us", link: "#0"  }
+  ];

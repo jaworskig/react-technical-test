@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "styled-components";
 import { CSSTransition } from "react-transition-group";
-import { menuSettings, footerData, mainMenuData, userInfoData } from "./config";
+import { menuSettings, footerData, mainMenuData, userInfoData, sideMenuData } from "./config";
 import MenuHeader from "./MenuHeader";
 import MenuFooter from "./MenuFooter";
 import MenuUserInfo from "./MenuUserInfo";
@@ -11,10 +11,11 @@ import MenuOpenButton from "./MenuOpenButton";
 
 const Style = style.div` 
   display: grid;
-   
+  height:  100vh;
   background-color: ${menuSettings.backgroundColor};
   color: ${menuSettings.color};
-  grid-template-columns: 200px auto;
+  grid-template-columns: 30vw auto;
+  
   grid-template-areas:
   'MenuHeader MenuHeader'
   'MenuSideItems MenuUserInfo'
@@ -30,8 +31,8 @@ const Style = style.div`
     'MenuFooter';
   };
 
-  opacity: 0;  
-  transform: translate3d(0,-100vw,0);
+  //opacity: 0;  
+  //transform: translate3d(0,-100vw,0);
 
 `;
 
@@ -65,7 +66,7 @@ const Menu = () => {
       <Transition isVisible={visible}>
         <Style>
           <MenuHeader onClick={() => setVisible(!visible)} />
-          <MenuSideItems />
+          <MenuSideItems data={sideMenuData}/>
           <MenuUserInfo data={userInfoData} />
           <MenuMaintems data={mainMenuData} />
           <MenuFooter data={footerData} />

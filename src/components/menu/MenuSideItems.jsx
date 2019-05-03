@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "styled-components";
 import { menuSettings } from "./config";
 
@@ -9,21 +9,17 @@ const MenuSideItemsStyle = style.div`
     display: none;
   }
 `;
-
-class MenuSideItems extends Component {
-  render() {
-    return (
-      <MenuSideItemsStyle>
-        <div>
-          <ul>
-            <li>Home</li>
-            <li>Flights</li>
-            <li>....</li>
-          </ul>
-        </div>
-      </MenuSideItemsStyle>
-    );
-  }
-}
+ 
+const MenuSideItems = props => {
+  return (
+    <MenuSideItemsStyle>
+      <ul>
+        {props.data.map((x, index) => (
+          <li key={index}>{x.text}</li>
+        ))}
+      </ul>
+    </MenuSideItemsStyle>
+  );
+};
 
 export default MenuSideItems;
