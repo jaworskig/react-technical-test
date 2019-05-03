@@ -12,8 +12,9 @@ const MenuOpenButton = ({ className, onClick }) => {
 };
 
 const MenuOpenButtonStyle = style(MenuOpenButton)`
-    display: flex; 
-   // justify-content: flex-end;
+    //display: flex;
+    display: ${props => !props.isVisible ? "flex" : "none" }; 
+    justify-content: flex-end;
 `;
 
 export default MenuOpenButtonStyle;
