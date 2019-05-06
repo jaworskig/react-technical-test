@@ -1,43 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "styled-components";
+import AvatarIMGStyle from "./MenuUserInfoAvatar";
 import { menuSettings } from "./config";
 
 const MenuUserInfoStyle = style.div`
   grid-area: MenuUserInfo;
   display: flex;
+  justify-content: left;
   align-items: center;  
+
+  
+
   @media (max-width: ${menuSettings.mobileWidth}px) {
     flex-direction: column;
+    font-size: 1rem;
+    
+    //padding-top: 10px;
+  }
+
+  @media (min-width: ${menuSettings.mobileWidth}px) {
+    border-bottom: 1px solid ${menuSettings.borderColor2};
+    width: 50vw;
+  }
+
+  li {
+    padding-bottom: 5px;
   }
 `;
 
-const AvatarIMG = ({ className, data }) => (
-  <div className={className}>
-    <img src={data.image} alt="Avatar" />
-  </div>
-);
-
-const AvatarIMGStyle = style(AvatarIMG)`
-  display: flex;
-  justify-content: center;  
-  align-items: center;  
- 
-  width: 30px;
-  height: 30px;
-  
-  background-color: ${menuSettings.borderColor};
-  border-radius: 50%;
-  border: 2px solid  ${menuSettings.backgroundColor};
-
-  @media (min-width: ${menuSettings.mobileWidth}px) { 
-    box-shadow: 0 0 0 2px  ${menuSettings.borderColor}; 
-  }
-
-  img {
-    width: auto;
-    height: 70%;
-  }
-`;
+function formatBalance(number) {
+  return new Intl.NumberFormat(menuSettings.locale, {
+    style: "currency",
+    currency: menuSettings.currency
+  }).format(number);
+}
 
 const UserInfoDetails = ({ className, data }) => (
   <div className={className}>
@@ -47,14 +43,14 @@ const UserInfoDetails = ({ className, data }) => (
     </div>
     <div type="fullDesc">{data.fullDesc}</div>
     <div type="balanceContent">
-      <div type="balance">{data.balance}&nbsp;</div>
+      <div type="balance">{formatBalance(data.balance)}&nbsp;</div>
       <div type="shortDesc">{data.shortDesc}</div>
     </div>
   </div>
 );
 
 const UserNameStyle = style(UserInfoDetails)`
-     
+
       [type="fullDesc"] {
         display: none;
       }
@@ -67,10 +63,14 @@ const UserNameStyle = style(UserInfoDetails)`
         display: flex;
       }
 
-      @media (max-width: ${menuSettings.mobileWidth}px) {
+      @media (min-width: ${menuSettings.mobileWidth}px) {
+        padding-left: 20px; 
+      }
 
+      @media (max-width: ${menuSettings.mobileWidth}px) { 
         [type="fullDesc"] {
           display: flex;
+          font-size: 0.8rem;
         }
 
         [type="userFullName"] {
@@ -90,16 +90,14 @@ const UserNameStyle = style(UserInfoDetails)`
         }
       }
 `;
-
-class MenuUserInfo extends Component {
-  render() {
-    return (
-      <MenuUserInfoStyle>
-        <AvatarIMGStyle data={this.props.data} />
-        <UserNameStyle data={this.props.data} />
-      </MenuUserInfoStyle>
-    );
-  }
-}
+ 
+const MenuUserInfo = props => {
+  return (
+    <MenuUserInfoStyle>
+      <AvatarIMGStyle data={props.data} />
+      <UserNameStyle data={props.data} />
+    </MenuUserInfoStyle>
+  );
+};
 
 export default MenuUserInfo;

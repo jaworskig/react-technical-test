@@ -1,20 +1,34 @@
 import React from "react";
 import style from "styled-components";
-import {menuSettings} from "./config";
+import { menuSettings } from "./config";
 
 const MenuFooterStyle = style.div`
   grid-area: MenuFooter;
-  text-align: center;
-`;
-const MenuFooterTextStyle = style.div`
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid ${menuSettings.borderColor2};
+
+  @media (min-width: ${menuSettings.mobileWidth}px) {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-stretch: expanded;
+  }
+
+ 
+
+  
 `;
 
 const MenuFooterDetailsStyle = style.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width: ${menuSettings.mobileWidth}px) {
-    font-size: 1rem; 
-    display: none;
+    display: none; 
   }
 `;
 
@@ -24,19 +38,17 @@ const Link = ({ linkType, linkData }) => (
   </a>
 );
 
-const MenuFooter = (props) => {
+const MenuFooter = props => {
   return (
     <MenuFooterStyle>
-      <MenuFooterTextStyle>
-        <div>{props.data.contact}</div>
-      </MenuFooterTextStyle>
+      {props.data.contact}
       <MenuFooterDetailsStyle>
         <Link linkType="callto" linkData={props.data.phone} />
-        <br />
+        
         <Link linkType="mailto" linkData={props.data.email} />
       </MenuFooterDetailsStyle>
     </MenuFooterStyle>
   );
-}
+};
 
 export default MenuFooter;
