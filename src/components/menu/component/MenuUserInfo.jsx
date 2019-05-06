@@ -1,7 +1,7 @@
 import React from "react";
 import style from "styled-components";
 import AvatarIMGStyle from "./MenuUserInfoAvatar";
-import { menuSettings } from "./config";
+import { menuSettings } from "../config";
 
 const MenuUserInfoStyle = style.div`
   grid-area: MenuUserInfo;

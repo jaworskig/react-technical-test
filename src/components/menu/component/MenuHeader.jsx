@@ -1,7 +1,7 @@
 import React from "react";
 import style from "styled-components";
-import logo from "../../resources/img/awaymoFullWhite.svg"
-import { menuSettings } from "./config";
+import logo from "../../../resources/img/awaymoFullWhite.svg"
+import { menuSettings } from "../config";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 

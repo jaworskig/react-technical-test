@@ -1,6 +1,6 @@
 import React  from "react";
 import style from "styled-components";
-import { menuSettings } from "./config";
+import { menuSettings } from "../config";
 
  
 const AvatarIMG = ({ className, data }) => (

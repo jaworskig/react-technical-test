@@ -1,6 +1,6 @@
 import React from "react";
 import style from "styled-components";
-import { menuSettings, disType } from "./config";
+import { menuSettings, disType } from "../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 

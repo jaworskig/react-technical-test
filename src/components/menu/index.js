@@ -8,12 +8,12 @@ import {
   userInfoData,
   sideMenuData
 } from "./config";
-import MenuHeader from "./MenuHeader";
-import MenuFooter from "./MenuFooter";
-import MenuUserInfo from "./MenuUserInfo";
-import MenuMaintems from "./MenuMaintems";
-import MenuSideItems from "./MenuSideItems";
-import MenuOpenButton from "./MenuOpenButton";
+import MenuHeader from "./component/MenuHeader";
+import MenuFooter from "./component/MenuFooter";
+import MenuUserInfo from "./component/MenuUserInfo";
+import MenuMaintems from "./component/MenuMaintems";
+import MenuSideItems from "./component/MenuSideItems";
+import MenuOpenButton from "./component/MenuOpenButton";
 
 const Style = style.div` 
   display: grid;
@@ -57,10 +57,9 @@ const Style = style.div`
     'MenuMainItems'
     'MenuFooter';
   };
-
- //display: none;
- opacity: 0;  
- transform: translate3d(0,-110vh,0);
+  
+  opacity: 0;  
+  transform: translate3d(0,-110vh,0);
 `;
 
 const Transition = style(({ className, isVisible, children }) => (
